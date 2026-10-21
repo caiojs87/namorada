@@ -1,0 +1,23 @@
+NOSSO AMOR — versão com login e carinhos em tempo real
+
+IMPORTANTE
+Esta versão mantém o HTML, as fotos, os jogos e as músicas existentes, e adiciona uma tela de login Supabase.
+
+ANTES DE PUBLICAR
+1. Os UID de Caio e Clara já estão preenchidos no index.html.
+2. A URL e a chave publicável do Supabase já estão preenchidas. Chaves publicáveis podem estar no navegador; NUNCA use sb_secret/service_role no site.
+3. No Supabase > Editor SQL, execute CONFIGURAR-SUPABASE.sql para alinhar os tipos de carinho aceitos.
+4. O script também garante que a tabela esteja na publicação supabase_realtime.
+5. O site agora mostra uma animação grande de corações/emoji tanto para quem envia quanto para quem recebe o carinho.
+6. Publique os arquivos atualizados na Netlify/GitHub depois de executar o SQL e testar login/envio.
+
+CONTA E SEGURANÇA
+- As contas de Caio e Clara precisam existir em Supabase > Authentication > Users.
+- O login usa o e-mail e a senha que foram definidos ao criar cada usuário.
+- A política INSERT criada anteriormente restringe os envios aos dois UID configurados.
+- A política SELECT criada anteriormente permite ler apenas linhas em que o usuário autenticado é remetente ou destinatário.
+- Não habilite cadastro público para desconhecidos.
+- A página precisa estar aberta nos dois aparelhos para mostrar a interação em tempo real. Notificações com o site fechado exigem outro serviço.
+
+OBSERVAÇÃO
+Os UID foram preenchidos com os identificadores fornecidos na conversa. Teste o login de ambas as contas antes de publicar. Se houver erro de permissão, revise as políticas RLS no Supabase.

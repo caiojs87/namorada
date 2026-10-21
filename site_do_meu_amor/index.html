@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4b1838">
+<meta name="description" content="Um pedacinho do nosso mundo, feito com amor para Clara.">
+<title>Nosso Amor — Para Clara ❤️</title>
+<style>
+:root{--wine:#4b1838;--rose:#e85d85;--pink:#ffb6c9;--cream:#fff7f2;--ink:#4c2037;--glass:rgba(255,255,255,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--cream);background:radial-gradient(ellipse at top,#8c315e 0,#4b1838 45%,#211124 100%);background-attachment:fixed;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,#000,transparent 90%);z-index:-1}
+button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(42,15,34,.8);backdrop-filter:blur(16px);border-bottom:1px solid #ffffff20;padding:10px 14px}
+.brand{font-family:Georgia,serif;text-align:center;font-size:1.25rem;letter-spacing:.04em;margin:3px 0 10px}.brand span{color:#ff9bb8}
+nav{display:flex;gap:8px;justify-content:center;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+.navbtn{flex:0 0 auto;border:1px solid #ffffff2c;background:#ffffff0b;color:#ffeaf1;border-radius:999px;padding:9px 13px;font-size:.88rem;transition:.25s}.navbtn.active,.navbtn:hover{background:#ffeaf1;color:var(--wine);transform:translateY(-1px)}
+main{width:min(100% - 28px,950px);margin:0 auto;padding:26px 0 60px}.page{display:none;animation:rise .5s ease both}.page.active{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero{text-align:center;padding:clamp(30px,7vw,75px) 12px 35px}.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:#ffc5d5}.hero h1{font:clamp(2.6rem,9vw,5.8rem)/.98 Georgia,serif;margin:16px 0;color:#fff7f9;text-shadow:0 8px 35px #ff7da766}.hero h1 em{font-weight:normal;color:#ff9fbb}.hero p{max-width:620px;margin:20px auto;color:#ffe4ed;line-height:1.8;font-size:1.05rem}
+.btn{border:0;border-radius:999px;padding:13px 20px;background:linear-gradient(135deg,#ffdce6,#ff9fbb);color:#5a1e3d;font-weight:750;box-shadow:0 8px 25px #16061735;transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}.btn.secondary{background:#ffffff13;border:1px solid #ffffff35;color:#fff}.btn.small{padding:9px 14px;font-size:.9rem}
+.glass{background:linear-gradient(135deg,#ffffff18,#ffffff08);border:1px solid #ffffff25;border-radius:24px;box-shadow:0 20px 55px #15071630;backdrop-filter:blur(12px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;margin:28px auto}.stat{padding:18px 10px;text-align:center}.stat strong{display:block;font:clamp(1.5rem,5vw,2.3rem) Georgia,serif;color:#ffb4c9}.stat span{font-size:.8rem;color:#ffe2eb}
+.sectionhead{text-align:center;margin:20px auto 26px}.sectionhead h2{font:clamp(2rem,6vw,3.2rem) Georgia,serif;margin:0 0 10px}.sectionhead p{color:#f8cfdd;margin:0 auto;max-width:620px;line-height:1.7}
+.card{padding:clamp(18px,4vw,30px);margin:14px 0}.card h3{font:1.5rem Georgia,serif;margin:0 0 12px;color:#ffd1df}.card p{line-height:1.8;color:#ffedf2}
+.letter{max-width:740px;margin:0 auto;background:var(--cream);color:var(--ink);padding:clamp(22px,6vw,48px);border-radius:8px 24px 8px 24px;box-shadow:0 25px 60px #12071355;position:relative}.letter:before{content:"♥";position:absolute;right:20px;top:12px;color:#e85d85;font-size:1.5rem}.letter h3{color:#9d315b;font:2rem Georgia,serif}.letter p{color:#613149;line-height:1.95}.letter .sign{font:italic 1.35rem Georgia,serif;text-align:right;color:#a13d66}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.memory{overflow:hidden;border-radius:18px;background:#ffffff12;border:1px solid #ffffff24}.memory img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s}.memory:hover img{transform:scale(1.04)}.memory p{margin:0;padding:12px;text-align:center;font-size:.9rem;color:#ffe4ed}
+.reason{font:clamp(1.3rem,4vw,2rem) Georgia,serif;line-height:1.5;color:#fff;text-align:center;padding:26px 12px;min-height:130px;display:grid;place-items:center}
+.futurelist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.dream{padding:18px;border-radius:18px;background:#ffffff0d;border:1px solid #ffffff20;color:#ffe5ed;line-height:1.6}.dream b{display:block;font-size:1.3rem;margin-bottom:6px}
+.gamegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.gamecard{padding:20px}.gamecard h3{font:1.5rem Georgia,serif;color:#ffd0de}.gamecard p{color:#f8dbe5;line-height:1.6}.playfield{position:relative;min-height:240px;border:1px dashed #ffc0d5aa;border-radius:18px;overflow:hidden;background:#2c102b80;margin:15px 0;touch-action:manipulation}.target{position:absolute;border:0;background:transparent;font-size:2.2rem;padding:0;filter:drop-shadow(0 0 10px #ff7aa6)}.question{font-size:1.15rem;line-height:1.6;color:#fff}.answers{display:grid;gap:8px;margin:14px 0}.answers button{background:#ffffff13;border:1px solid #ffffff35;color:white;border-radius:12px;padding:12px}.answers button:hover{background:#ffb7cd2b}.result{min-height:30px;color:#ffd3e0;font-weight:650}
+.scratch{background:#fff3f7;color:#59203c;border-radius:16px;padding:25px 16px;text-align:center;margin:16px 0}.scratch .secret{font:1.3rem Georgia,serif;margin:12px 0;filter:blur(7px);transition:filter .5s}.scratch.revealed .secret{filter:none}
+
+.affection-intro{text-align:center}.affection-heart{font-size:3.2rem;animation:heartBeat 1.5s ease-in-out infinite}.affection-intro h3{margin-top:6px}.affection-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0}.affection-btn{display:flex;flex-direction:column;align-items:center;gap:7px;min-height:145px;padding:18px 10px;border:1px solid #ffffff30;border-radius:20px;background:linear-gradient(145deg,#ffffff1c,#ffffff08);color:#fff0f5;text-align:center;box-shadow:0 12px 28px #14061722;transition:transform .2s,border-color .2s,background .2s}.affection-btn:hover,.affection-btn:focus-visible{transform:translateY(-4px);border-color:#ffb6c9;background:#ffb6c91a}.affection-btn span{font-size:2rem}.affection-btn strong{font-size:.98rem}.affection-btn small{color:#f5cbd9;line-height:1.4}.affection-result{text-align:center;min-height:120px}.affection-result h3{color:#ffd1df}.affection-result p{line-height:1.8}.affection-result.pulse{animation:affectionPulse .45s ease}@keyframes heartBeat{50%{transform:scale(1.13)}}@keyframes affectionPulse{50%{transform:scale(1.015);box-shadow:0 0 35px #ff8ab544}}
+/* Celebracao sincronizada quando um carinho chega */
+#affectionCelebration{position:fixed;inset:0;z-index:900;display:grid;place-items:center;pointer-events:none;overflow:hidden;background:radial-gradient(circle at center,#ff8ab533,transparent 60%);opacity:0}
+#affectionCelebration.active{animation:celebrationFade 2.4s ease forwards}
+#affectionCelebration .celebration-emoji{font-size:clamp(5rem,20vw,10rem);filter:drop-shadow(0 0 25px #ff9fbb);animation:celebrationPop 1.1s cubic-bezier(.2,.8,.2,1) both}
+.celebration-particle{position:absolute;bottom:-10vh;font-size:clamp(1.3rem,4vw,2.5rem);animation:celebrationFloat 2.2s ease-out forwards}
+@keyframes celebrationFade{0%{opacity:0}12%,72%{opacity:1}100%{opacity:0}}
+@keyframes celebrationPop{0%{transform:scale(.2) rotate(-20deg);opacity:0}35%{transform:scale(1.2) rotate(8deg);opacity:1}60%{transform:scale(1) rotate(0)}100%{transform:scale(.9);opacity:0}}
+@keyframes celebrationFloat{0%{transform:translateY(0) scale(.5) rotate(0);opacity:0}15%{opacity:1}100%{transform:translateY(-115vh) scale(1.3) rotate(35deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){#affectionCelebration.active,.celebration-particle,.celebration-emoji{animation-duration:.01ms!important}}
+
+.musicbar{position:fixed;right:14px;bottom:14px;z-index:30;display:flex;gap:8px;align-items:center;background:#321329eF;border:1px solid #ffffff35;border-radius:999px;padding:8px;box-shadow:0 8px 30px #0004}.musicbar button{border:0;border-radius:999px;padding:10px 13px;background:#ffc2d4;color:#511c3b;font-weight:bold}.musicbar select{max-width:130px;background:transparent;color:#fff;border:0;font-size:.8rem}.musicbar option{color:#321329}
+.floating{position:fixed;z-index:-1;bottom:-40px;pointer-events:none;animation:floatup linear forwards;opacity:.8}@keyframes floatup{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+.toast{position:fixed;top:90px;left:50%;transform:translateX(-50%);background:#fff0f5;color:#6a2344;padding:13px 18px;border-radius:999px;box-shadow:0 10px 30px #0003;z-index:50;max-width:90vw;text-align:center;animation:rise .3s}
+footer{text-align:center;color:#e8bdcd;font-size:.82rem;padding:25px 10px 10px}
+@media(max-width:650px){.affection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.affection-btn{min-height:130px;padding:15px 8px}.affection-btn strong{font-size:.9rem}.affection-btn small{font-size:.76rem}main{width:min(100% - 20px,950px);padding-top:16px}.topbar{padding:9px 8px}.brand{font-size:1.1rem}.navbtn{padding:8px 11px;font-size:.82rem}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.memory p{font-size:.8rem;padding:9px 5px}.gamegrid{grid-template-columns:1fr}.futurelist{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:13px 5px}.musicbar{right:8px;bottom:8px}.musicbar select{max-width:100px}.hero{padding-top:40px}.letter{border-radius:8px 18px 8px 18px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* Acesso privado do casal */
+#loginGate{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at top,#8c315e 0,#4b1838 55%,#211124 100%);overflow:auto}
+#loginGate[hidden]{display:none}
+.login-card{width:min(100%,430px);padding:28px;border:1px solid #ffffff35;border-radius:24px;background:#ffffff12;backdrop-filter:blur(14px);box-shadow:0 20px 60px #0005}
+.login-card h1{font:2.2rem Georgia,serif;text-align:center;margin:0 0 8px;color:#fff}
+.login-card p{text-align:center;color:#ffe1eb;line-height:1.6}
+.login-card label{display:block;margin:14px 0 6px;color:#ffe7ef;font-size:.92rem}
+.login-card input{width:100%;padding:13px 14px;border-radius:12px;border:1px solid #ffffff40;background:#2b1028;color:#fff;font:inherit}
+.login-card input:focus{outline:2px solid #ffb6c9}
+.login-card .btn{width:100%;margin-top:16px}
+#loginError{min-height:24px;color:#ffd1df;font-size:.9rem;text-align:center;margin-top:12px}
+#accountBar{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:6px 0 10px;color:#ffe4ed;font-size:.82rem}
+#accountBar button{border:1px solid #ffffff35;border-radius:999px;padding:6px 12px;background:#ffffff10;color:#fff}
+#connectionStatus{font-size:.78rem;color:#ffd1df}
+
+
+/* Álbum romântico de memórias */
+.memories-heading{text-align:center;position:relative}
+.memory-eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:#ffd0df;margin-bottom:10px;animation:memoryGlow 3s ease-in-out infinite}
+.memories-heading h2{text-shadow:0 0 24px #ff8bb766}
+.memory-note{max-width:720px;margin:0 auto 28px;padding:22px 24px;text-align:center;border:1px solid #ffc6dc66!important;background:linear-gradient(135deg,#ffffff16,#f48ab31c)!important;position:relative;overflow:hidden}
+.memory-note:before{content:"";position:absolute;inset:-80% -30%;background:linear-gradient(110deg,transparent 40%,#ffffff10 50%,transparent 60%);animation:memoryShimmer 7s linear infinite;pointer-events:none}
+.note-heart{font-size:1.8rem;display:block;animation:memoryPulse 2.4s ease-in-out infinite}
+.memory-note p{font:italic clamp(1.05rem,2.5vw,1.35rem) Georgia,serif;line-height:1.6;color:#fff0f5;margin:10px 0}
+.note-sign{color:#ffc2d6;font-size:.88rem}
+.memory-album{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 22px;align-items:center;padding:14px 6px 30px;max-width:1080px;margin:0 auto}
+.memory.polaroid{position:relative;display:block;width:100%;min-width:0;padding:10px 10px 0;border:0;border-radius:3px;background:#fff8f1;color:#4c2037;box-shadow:0 12px 30px #10061155,0 0 0 1px #fff9;cursor:zoom-in;text-align:initial;overflow:visible;transition:transform .35s ease,box-shadow .35s ease;animation:memoryAppear .7s both}
+.memory.polaroid:nth-child(2){animation-delay:.08s}.memory.polaroid:nth-child(3){animation-delay:.16s}.memory.polaroid:nth-child(4){animation-delay:.24s}.memory.polaroid:nth-child(5){animation-delay:.32s}.memory.polaroid:nth-child(6){animation-delay:.4s}.memory.polaroid:nth-child(7){animation-delay:.48s}.memory.polaroid:nth-child(8){animation-delay:.56s}.memory.polaroid:nth-child(9){animation-delay:.64s}
+.memory.polaroid:hover,.memory.polaroid:focus-visible{transform:rotate(0) translateY(-8px) scale(1.035);box-shadow:0 20px 38px #10061170,0 0 0 2px #ffc2d6;z-index:2;outline:none}
+.memory.polaroid.tilt-left{transform:rotate(-2deg)}.memory.polaroid.tilt-right{transform:rotate(2deg)}
+.memory.polaroid .photo-wrap{display:block;overflow:hidden;background:#ead9d8;aspect-ratio:4/5}
+.memory.polaroid img{display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;transition:transform .65s cubic-bezier(.2,.8,.2,1),filter .4s}
+.memory.polaroid:hover img{transform:scale(1.06);filter:saturate(1.08)}
+.memory.polaroid .photo-caption{display:block;min-height:54px;padding:12px 3px 13px;text-align:center;font:clamp(.82rem,1.5vw,1rem) "Segoe Print","Comic Sans MS",cursive;color:#6d304b;line-height:1.35}
+.memory.polaroid .photo-doodle{position:absolute;right:16px;top:14px;color:#e85d85;text-shadow:0 1px 2px #fff;font-size:1.1rem;pointer-events:none}
+.memory-footer{max-width:760px;margin:10px auto 0;text-align:center;padding:26px;border:1px solid #ffc6dc55!important;background:linear-gradient(135deg,#ffffff12,#f28ab31b)!important}
+.memory-footer h3{font:clamp(1.4rem,3vw,2rem) Georgia,serif;color:#ffe2ec;margin:8px 0 12px}.memory-footer p{line-height:1.8;color:#ffedf3}.memory-footer-sparkle{color:#ffc4d8;letter-spacing:.2em;animation:memoryGlow 3s infinite}
+@keyframes memoryAppear{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+@keyframes memoryPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.16)}}
+@keyframes memoryGlow{0%,100%{opacity:.72;text-shadow:0 0 0 #ffb6c9}50%{opacity:1;text-shadow:0 0 16px #ff8bb7}}
+@keyframes memoryShimmer{0%{transform:translateX(-45%) rotate(12deg)}100%{transform:translateX(45%) rotate(12deg)}}
+@keyframes memoryBurst{0%{transform:translateY(0) scale(.6) rotate(0);opacity:0}15%{opacity:1}100%{transform:translateY(-85vh) scale(1.35) rotate(25deg);opacity:0}}
+.memory-lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:#160713ed;backdrop-filter:blur(12px)}
+.memory-lightbox.open{display:flex;animation:lightboxFade .2s ease}
+.memory-lightbox figure{margin:0;max-width:min(92vw,760px);max-height:90vh;text-align:center;animation:memoryZoom .25s ease}
+.memory-lightbox img{display:block;max-width:100%;max-height:78vh;object-fit:contain;border:10px solid #fff8f1;border-bottom-width:54px;box-shadow:0 18px 65px #0008;border-radius:3px}
+.memory-lightbox figcaption{color:#ffe0eb;margin-top:12px;font:italic 1.1rem Georgia,serif}
+.memory-lightbox .lightbox-close{position:absolute;right:18px;top:14px;border:1px solid #ffffff55;border-radius:50%;width:44px;height:44px;background:#ffffff1c;color:#fff;font-size:1.5rem}
+.memory-lightbox .lightbox-hint{position:absolute;bottom:15px;color:#ffffffa8;font-size:.8rem}
+@keyframes lightboxFade{from{opacity:0}to{opacity:1}}@keyframes memoryZoom{from{transform:scale(.94)}to{transform:scale(1)}}
+@media(max-width:760px){.memory-album{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px;padding-inline:2px}.memory.polaroid{padding:7px 7px 0}.memory.polaroid .photo-caption{min-height:50px;padding:10px 2px;font-size:.78rem}.memory-note{padding:18px 16px}.memory-footer{padding:22px 17px}}
+@media(max-width:390px){.memory-album{gap:18px 10px}.memory.polaroid .photo-caption{font-size:.72rem}.memory.polaroid .photo-doodle{right:11px;top:10px}}
+@media(prefers-reduced-motion:reduce){.memory-eyebrow,.note-heart,.memory-note:before,.memory-polaroid,.memory-footer-sparkle{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+
+<div id="loginGate">
+  <form class="login-card" id="loginForm">
+    <h1>Nosso <span style="color:#ff9fbb">Amor</span> ♡</h1>
+    <p>Um cantinho particular para Caio e Clara.<br>Entre para trocar carinhos à distância. 💗</p>
+    <label for="loginEmail">E-mail</label>
+    <input id="loginEmail" type="email" autocomplete="username" required placeholder="Seu e-mail">
+    <label for="loginPassword">Senha</label>
+    <input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Sua senha">
+    <button class="btn" id="loginSubmit" type="submit">Entrar no nosso cantinho 💌</button>
+    <div id="loginError" role="status" aria-live="polite"></div>
+  </form>
+</div>
+
+<header class="topbar">
+  <div class="brand">Nosso <span>Amor</span> ♡ <small style="font-size:.72em">Para Clara</small></div>
+  <div id="accountBar"><span id="signedInAs">Acesso privado</span><span id="connectionStatus">Conectando…</span><button id="logoutButton" type="button">Sair</button></div>
+  <nav aria-label="Navegação principal">
+    <button class="navbtn active" data-page="home">♡ Início</button>
+    <button class="navbtn" data-page="letters">💌 Cartas</button>
+    <button class="navbtn" data-page="affection">💋 Carinhos</button>
+    <button class="navbtn" data-page="memories">📸 Memórias</button>
+    <button class="navbtn" data-page="games">🎮 Jogos</button>
+    <button class="navbtn" data-page="future">✨ Nosso futuro</button>
+  </nav>
+</header>
+<main>
+<section class="page active" id="home">
+  <div class="hero">
+    <div class="eyebrow">um cantinho só nosso</div>
+    <h1>Para <em>Clara</em> ♡</h1>
+    <p>Se o mundo ficar barulhento, volta aqui. Esse pequeno universo foi feito para te lembrar que existe alguém que sorri só de pensar em você — e que escolheria você de novo, em todas as vidas.</p>
+    <button class="btn" onclick="showPage('letters'); burstHearts()">Abra seu pedacinho de amor 💗</button>
+    <div class="stats">
+      <div class="stat glass"><strong id="days">—</strong><span>dias de história</span></div>
+      <div class="stat glass"><strong>∞</strong><span>carinho por você</span></div>
+      <div class="stat glass"><strong>1</strong><span>pessoa favorita</span></div>
+    </div>
+  </div>
+  <div class="card glass">
+    <h3>Uma coisa que nunca quero que você esqueça…</h3>
+    <p>Você não precisa estar tendo o melhor dia, nem sorrir o tempo todo, nem encontrar as palavras certas. Pode vir como estiver. Quero ser abrigo nos dias difíceis, comemorar suas vitórias e continuar conhecendo cada versão sua. Meu amor não está só nos grandes momentos: está também no cuidado de todos os dias. ❤️</p>
+    <button class="btn secondary small" onclick="showToast('Se pudesse agora, te daria um abraço bem apertado. 🫂')">Receber um abraço virtual 🫂</button>
+  </div>
+</section>
+
+<section class="page" id="letters">
+  <div class="sectionhead"><h2>Cartinhas para você 💌</h2><p>Escolha uma carta. Todas foram feitas para te lembrar do quanto você é especial.</p></div>
+  <article class="letter">
+    <h3>Minha Clara,</h3>
+    <p>Amor, se eu pudesse te entregar alguma coisa além destas palavras, seria a chance de você se enxergar pelos meus olhos por alguns minutos. Você entenderia por que seu sorriso muda meu dia, por que até uma conversa simples com você fica guardada na minha memória e por que estar ao seu lado faz os planos mais comuns parecerem sonhos bonitos.</p>
+    <p>Eu não prometo que todos os dias serão fáceis. Prometo querer conversar, aprender, cuidar e construir com você. Quero dividir risadas bobas, conquistas, abraços demorados e aqueles silêncios confortáveis em que a gente não precisa dizer nada para se entender.</p>
+    <p>Mesmo quando a saudade apertar e a distância parecer enorme, existe uma coisa que ela não consegue diminuir: o carinho que sinto por você. Você é minha pessoa favorita, meu amor e uma parte linda da história que ainda estamos escrevendo.</p>
+    <p>Que a gente nunca deixe de namorar nos detalhes, de se escolher com carinho e de criar novas lembranças. Eu te amo, minha princesa. Hoje, amanhã e em cada capítulo que vier. ❤️</p>
+    <div class="sign">Com todo o meu amor, Caio ♡</div>
+  </article>
+  <div class="card glass">
+    <h3>💗 Um motivo de cada vez</h3><div class="reason" id="reason">Toque no botão para descobrir um dos infinitos motivos pelos quais eu te amo.</div>
+    <div style="text-align:center"><button class="btn" onclick="nextReason()">Mais um motivo ✨</button></div>
+  </div>
+  <div class="card glass">
+    <h3>🌧️ Abra quando sentir saudade</h3>
+    <p>Respira fundo, meu amor. Imagina meus braços te envolvendo e minha mão fazendo carinho no seu cabelo. Se eu pudesse escolher onde estar agora, escolheria pertinho de você. Até chegar o próximo abraço, guarda este: você é amada, faz falta e mora em muitos dos meus pensamentos.</p>
+    <button class="btn secondary small" onclick="burstHearts();showToast('Um beijo na testa e um abraço daqueles que demoram para acabar. 💋')">Mandar beijo e abraço 💋</button>
+  </div>
+</section>
+
+
+<section class="page" id="affection">
+  <div class="sectionhead"><h2>Carinhos à distância 💌</h2><p>Escolha o que você queria entregar agora: um beijo, um abraço ou só um lembrete de que está pensando nela.</p></div>
+  <div class="card glass affection-intro">
+    <div class="affection-heart" aria-hidden="true">💗</div>
+    <h3>Um toque seu, um carinho para ela</h3>
+    <p>Toque em um dos botões para enviar um carinho. Quando vocês dois estiverem conectados, os carinhos novos aparecerão nesta área em tempo real. O site precisa estar aberto para mostrar a atualização instantaneamente.</p>
+  </div>
+  <div class="affection-grid">
+    <button class="affection-btn" onclick="sendAffection('beijo')"><span>💋</span><strong>Mandar um beijo</strong><small>Um beijo meu pra você</small></button>
+    <button class="affection-btn" onclick="sendAffection('abraco')"><span>🫂</span><strong>Mandar um abraço</strong><small>Queria te apertar agora</small></button>
+    <button class="affection-btn" onclick="sendAffection('saudade')"><span>🥺</span><strong>Estou com saudade</strong><small>Você está fazendo falta</small></button>
+    <button class="affection-btn" onclick="sendAffection('teamo')"><span>❤️</span><strong>Dizer te amo</strong><small>Eu te escolheria de novo</small></button>
+    <button class="affection-btn" onclick="sendAffection('pensando')"><span>💭</span><strong>Estou pensando em você</strong><small>Você apareceu nos meus pensamentos</small></button>
+    <button class="affection-btn" onclick="sendAffection('orgulho')"><span>🌷</span><strong>Tenho orgulho de você</strong><small>Torço muito por você</small></button>
+    <button class="affection-btn" onclick="sendAffection('boa-noite')"><span>🌙</span><strong>Boa noite, princesa</strong><small>Que seus sonhos sejam leves</small></button>
+    <button class="affection-btn" onclick="sendAffection('surpresa')"><span>🎁</span><strong>Uma surpresa</strong><small>Abra para receber carinho</small></button>
+  </div>
+  <div class="card glass affection-result" id="affectionResult" aria-live="polite">
+    <h3>Seu carinho aparecerá aqui 💞</h3><p>Escolha um botão acima para preparar uma mensagem.</p>
+  </div>
+</section>
+
+<section class="page" id="memories">
+  <div class="sectionhead memories-heading">
+    <div class="memory-eyebrow">♡ capítulos da nossa história ♡</div>
+    <h2>Nossas memórias 📸</h2>
+    <p>Cada foto guarda um pedacinho de nós. E ainda temos tantas lembranças lindas para viver, meu amor. ✨</p>
+  </div>
+  <div class="memory-note glass">
+    <span class="note-heart" aria-hidden="true">💌</span>
+    <p>Se eu pudesse congelar alguns instantes da vida, escolheria aqueles em que estou pertinho de você.</p>
+    <span class="note-sign">Com amor, Caio ♡</span>
+  </div>
+  <div class="memory-album" aria-label="Álbum de fotos de Caio e Clara">
+    <button class="memory polaroid tilt-left" type="button" data-full="galeria/memoria_nova_1.jpeg" aria-label="Ampliar foto de Caio e Clara abraçados">
+      <span class="photo-wrap"><img src="galeria/memoria_nova_1.jpeg" alt="Caio e Clara juntinhos, olhando um para o outro" loading="lazy"></span><span class="photo-caption">Meu lugar favorito é perto de você ♡</span><span class="photo-doodle">♡</span>
+    </button>
+    <button class="memory polaroid tilt-right" type="button" data-full="galeria/memoria_nova_2.jpeg" aria-label="Ampliar foto do beijo de Caio e Clara">
+      <span class="photo-wrap"><img src="galeria/memoria_nova_2.jpeg" alt="Caio dando um beijo carinhoso em Clara" loading="lazy"></span><span class="photo-caption">Um beijo, mil motivos pra te amar 💋</span><span class="photo-doodle">✧</span>
+    </button>
+    <button class="memory polaroid tilt-left" type="button" data-full="galeria/memoria_nova_3.jpeg" aria-label="Ampliar foto de Caio beijando a bochecha de Clara">
+      <span class="photo-wrap"><img src="galeria/memoria_nova_3.jpeg" alt="Caio beijando a bochecha de Clara enquanto ela sorri" loading="lazy"></span><span class="photo-caption">Seu sorriso melhora tudo 💗</span><span class="photo-doodle">♡</span>
+    </button>
+    <button class="memory polaroid tilt-right" type="button" data-full="galeria/memoria_nova_4.jpeg" aria-label="Ampliar selfie de Caio e Clara">
+      <span class="photo-wrap"><img src="galeria/memoria_nova_4.jpeg" alt="Selfie carinhosa de Caio e Clara" loading="lazy"></span><span class="photo-caption">Minha pessoa favorita 🫶</span><span class="photo-doodle">♡</span>
+    </button>
+    <button class="memory polaroid tilt-left" type="button" data-full="galeria/memoria_nova_5.jpeg" aria-label="Ampliar foto de Caio e Clara abraçados no sofá">
+      <span class="photo-wrap"><img src="galeria/memoria_nova_5.jpeg" alt="Clara sorrindo deitada perto de Caio" loading="lazy"></span><span class="photo-caption">Onde tem você, tem paz ✨</span><span class="photo-doodle">✧</span>
+    </button>
+    <button class="memory polaroid tilt-right" type="button" data-full="galeria/memoria_nova_6.jpeg" aria-label="Ampliar foto de Caio e Clara juntos">
+      <span class="photo-wrap"><img src="galeria/memoria_nova_6.jpeg" alt="Caio e Clara abraçados em um passeio" loading="lazy"></span><span class="photo-caption">Você, eu e todos os nossos planos ♾️</span><span class="photo-doodle">♡</span>
+    </button>
+    <button class="memory polaroid tilt-right" type="button" data-full="galeria/claraecaio.jpeg" aria-label="Ampliar lembrança antiga do casal">
+      <span class="photo-wrap"><img src="galeria/claraecaio.jpeg" alt="Outra lembrança de Caio e Clara" loading="lazy"></span><span class="photo-caption">Uma lembrança que aquece o coração 💞</span><span class="photo-doodle">♡</span>
+    </button>
+    <button class="memory polaroid tilt-left" type="button" data-full="galeria/caioeclara.jpeg" aria-label="Ampliar lembrança de Caio e Clara">
+      <span class="photo-wrap"><img src="galeria/caioeclara.jpeg" alt="Caio e Clara em um momento especial" loading="lazy"></span><span class="photo-caption">A gente, do nosso jeitinho ❤️</span><span class="photo-doodle">✧</span>
+    </button>
+    <button class="memory polaroid tilt-right" type="button" data-full="galeria/foto3.jpeg" aria-label="Ampliar outra lembrança do casal">
+      <span class="photo-wrap"><img src="galeria/foto3.jpeg" alt="Mais um momento especial de Caio e Clara" loading="lazy"></span><span class="photo-caption">E isso é só o começo… 🌙</span><span class="photo-doodle">♡</span>
+    </button>
+  </div>
+  <div class="memory-footer glass">
+    <div class="memory-footer-sparkle">✦　♡　✦</div>
+    <h3>Nosso álbum está só começando…</h3>
+    <p>Quero encher a vida de momentos com você: mais passeios, mais risadas, mais abraços demorados, mais beijos e mais histórias para contar. Que a gente nunca pare de colecionar motivos para sorrir juntinhos.</p>
+  </div>
+</section>
+
+<section class="page" id="games">
+  <div class="sectionhead"><h2>Brincadeiras do amor 🎮</h2><p>Uma pausa para sorrir. Jogue, descubra uma surpresa e desbloqueie um carinho virtual.</p></div>
+  <div class="gamegrid">
+    <div class="gamecard glass">
+      <h3>1. Caça aos corações 💖</h3><p>Toque nos corações que aparecerem. Pegue 10 para desbloquear uma surpresa!</p>
+      <div class="result" id="catchScore">Corações: 0 / 10</div>
+      <div class="playfield" id="field"><button class="target" id="target" aria-label="Pegar coração" hidden>💖</button><div id="gameIntro" style="padding:24px;text-align:center;color:#ffe4ed">Pronta para pegar corações?</div></div>
+      <button class="btn small" onclick="startCatch()">Começar jogo</button>
+    </div>
+    <div class="gamecard glass">
+      <h3>2. Quiz do nosso amor 💞</h3><p>Uma pergunta de cada vez, só para brincar. Não existe nota para o amor!</p>
+      <div class="question" id="quizQuestion">Qual é a melhor parte de uma história de amor?</div>
+      <div class="answers" id="answers">
+        <button onclick="answerQuiz(0)">Os presentes caros</button><button onclick="answerQuiz(1)">Cuidar, rir e construir juntos</button><button onclick="answerQuiz(2)">Nunca discordar</button>
+      </div><div class="result" id="quizResult" aria-live="polite"></div>
+      <button class="btn secondary small" onclick="nextQuiz()">Próxima pergunta ↗</button>
+    </div>
+    <div class="gamecard glass">
+      <h3>3. Raspe a surpresa 🎁</h3><p>Não dá para raspar a tela de verdade aqui, mas toque no cartão para revelar o segredo.</p>
+      <div class="scratch" id="scratch" onclick="revealScratch()"><div>✨ SURPRESA ✨</div><div class="secret">Vale um beijo demorado e um abraço apertado do Caio. 💋</div><small>Toque para revelar</small></div>
+      <button class="btn secondary small" onclick="revealScratch()">Revelar surpresa</button>
+    </div>
+    <div class="gamecard glass">
+      <h3>4. Escolha um presente 🎀</h3><p>Escolha uma caixinha e veja o carinho que ela esconde.</p>
+      <div class="answers"><button onclick="gift(0)">🎁 Caixinha rosa</button><button onclick="gift(1)">🎁 Caixinha dourada</button><button onclick="gift(2)">🎁 Caixinha surpresa</button></div><div class="result" id="giftResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="future">
+  <div class="sectionhead"><h2>O nosso amanhã ✨</h2><p>Não precisamos saber cada detalhe do futuro. Gosto da ideia de descobrir um dia de cada vez, lado a lado.</p></div>
+  <div class="futurelist">
+    <div class="dream"><b>🏡 Um cantinho nosso</b>Construir um lar com paz, risadas, carinho e espaço para os sonhos de nós dois.</div>
+    <div class="dream"><b>🌍 Lugares para conhecer</b>Viajar, explorar lugares novos e tirar fotos que um dia vão render histórias engraçadas.</div>
+    <div class="dream"><b>🍳 Dias simples</b>Fazer comida juntos, escolher um filme, conversar sobre o dia e transformar rotina em aconchego.</div>
+    <div class="dream"><b>🤝 Crescer juntos</b>Celebrar as conquistas um do outro, aprender com os desafios e continuar escolhendo o diálogo.</div>
+  </div>
+  <div class="card glass" style="text-align:center;margin-top:18px"><h3>Uma promessa de carinho</h3><p>Quero continuar te conhecendo, respeitando seus sonhos e fazendo planos que tenham espaço para os dois. Que nosso futuro seja feito de amor, amizade, parceria e muitas histórias para contar.</p><button class="btn" onclick="burstHearts();showToast('Que a vida nos dê muitos capítulos bonitos para escrever juntos. ❤️')">Guardar esse desejo ❤️</button></div>
+</section>
+<footer>Feito com carinho por Caio, para Clara. ♡<br>Uma página pequena para um amor enorme.</footer>
+<div class="memory-lightbox" id="memoryLightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Fechar foto ampliada">×</button>
+  <figure><img src="" alt="" id="lightboxImage"><figcaption id="lightboxCaption"></figcaption></figure>
+  <div class="lightbox-hint">Toque fora da foto ou pressione Esc para fechar</div>
+</div>
+</main>
+
+<div class="musicbar">
+  <button id="musicButton" onclick="toggleMusic()" aria-label="Tocar ou pausar música">▶ Música</button>
+  <select id="trackSelect" aria-label="Escolher música" onchange="changeTrack()">
+    <option value="galeria/Paul Partohap - P.S. I LOVE YOU (Lyric Video).mp3">P.S. I LOVE YOU</option>
+    <option value="galeria/Giveon - Like I Want You (Audio).mp3">Like I Want You</option>
+  </select>
+</div>
+<audio id="music" loop preload="none"><source src="galeria/Paul Partohap - P.S. I LOVE YOU (Lyric Video).mp3" type="audio/mpeg"></audio>
+<div id="affectionCelebration" aria-hidden="true"><div class="celebration-emoji" id="celebrationEmoji">💗</div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+// Interações da galeria de memórias
+(function setupMemoryAlbum(){
+  const box=document.getElementById('memoryLightbox');
+  if(!box) return;
+  const bigImage=document.getElementById('lightboxImage');
+  const caption=document.getElementById('lightboxCaption');
+  const closeBtn=box.querySelector('.lightbox-close');
+  function closeMemory(){
+    box.classList.remove('open');box.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';bigImage.src=''; 
+  }
+  document.querySelectorAll('.memory.polaroid').forEach(card=>{
+    card.addEventListener('click',()=>{
+      const img=card.querySelector('img');
+      bigImage.src=card.dataset.full||img.src;
+      bigImage.alt=img.alt;
+      caption.textContent=card.querySelector('.photo-caption')?.textContent||img.alt;
+      box.classList.add('open');box.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';closeBtn.focus();
+    });
+  });
+  closeBtn.addEventListener('click',closeMemory);
+  box.addEventListener('click',e=>{if(e.target===box)closeMemory();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&box.classList.contains('open'))closeMemory();});
+})();
+function memoryHeartBurst(){
+  if(typeof burstHearts==='function') burstHearts();
+  else {
+    for(let i=0;i<12;i++){
+      const heart=document.createElement('span');heart.textContent=['♡','💗','💕','✨'][i%4];
+      Object.assign(heart.style,{position:'fixed',left:(15+Math.random()*70)+'%',bottom:'-30px',zIndex:999,pointerEvents:'none',fontSize:(18+Math.random()*18)+'px',animation:'memoryBurst 2.4s ease-out forwards'});
+      document.body.appendChild(heart);setTimeout(()=>heart.remove(),2500);
+    }
+  }
+}
+</script>
+<script>
+// CONFIGURAÇÃO DO SUPABASE: URL e chave publicável podem ficar no navegador; nunca use sb_secret/service_role aqui.
+const SUPABASE_URL = "https://naytazpvcogtcktnpkks.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_dhEAZVkJz4k3T_ELdZHo5A_JLoUqI4z";
+// Preencha com os UID completos copiados de Autenticação > Usuários.
+const CAIO_UID = "8b049a39-108b-472a-8b70-02f76591fd8f";
+const CLARA_UID = "3dac546f-eab4-4d07-b7f6-1dae5e3792f0";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+let currentUser = null;
+let affectionSubscription = null;
+
+const pages=[...document.querySelectorAll('.page')], navButtons=[...document.querySelectorAll('.navbtn')];
+function showPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));navButtons.forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
+navButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+const startDate=new Date('2025-09-21T00:00:00');
+function updateDays(){const n=Math.max(0,Math.floor((new Date()-startDate)/86400000));document.getElementById('days').textContent=n.toLocaleString('pt-BR');}
+updateDays();setInterval(updateDays,60000);
+function showToast(msg){const old=document.querySelector('.toast');if(old)old.remove();const t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),3200);}
+function burstHearts(){for(let i=0;i<24;i++){const h=document.createElement('span');h.className='floating';h.textContent=['💗','💕','💖','✨','💘'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*22)+'px';h.style.animationDuration=(3+Math.random()*3)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),6500);}}
+setInterval(()=>{if(Math.random()<.55){const h=document.createElement('span');h.className='floating';h.textContent=Math.random()>.35?'♡':'✨';h.style.left=Math.random()*100+'vw';h.style.fontSize=(14+Math.random()*15)+'px';h.style.animationDuration=(7+Math.random()*5)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),13000);}},1800);
+const reasons=['Porque seu sorriso consegue melhorar meu dia.','Porque adoro ouvir você contar até as coisas mais simples.','Porque você me inspira a ser melhor, sem deixar de ser eu.','Porque nossos momentos bobos viram lembranças preciosas.','Porque quero comemorar suas vitórias e te apoiar nos dias difíceis.','Porque seu abraço parece uma pausa boa no meio do mundo.','Porque gosto de imaginar os planos que ainda vamos realizar.','Porque você é linda por fora e tem um lugar enorme no meu coração.','Porque até a saudade me lembra o quanto você é importante.','Porque eu escolheria continuar conhecendo você, todos os dias.','Porque amo o jeito único que você tem de ser você.','Porque com você quero construir, conversar, rir e crescer.'];
+let reasonIndex=-1;function nextReason(){reasonIndex=(reasonIndex+1)%reasons.length;const el=document.getElementById('reason');el.style.opacity=0;setTimeout(()=>{el.textContent=reasons[reasonIndex];el.style.opacity=1;},180);}
+const music=document.getElementById('music'), musicButton=document.getElementById('musicButton'), trackSelect=document.getElementById('trackSelect');
+async function toggleMusic(){if(music.paused){try{await music.play();musicButton.textContent='❚❚ Pausar';}catch(e){showToast('Toque novamente para iniciar a música. 🎵');}}else{music.pause();musicButton.textContent='▶ Música';}}
+function changeTrack(){const wasPlaying=!music.paused;music.src=trackSelect.value;music.load();if(wasPlaying)music.play().catch(()=>{});}
+music.addEventListener('play',()=>musicButton.textContent='❚❚ Pausar');music.addEventListener('pause',()=>musicButton.textContent='▶ Música');
+// Heart-catching mini-game
+let catchCount=0,catchTimer=null,catchRunning=false;const field=document.getElementById('field'),target=document.getElementById('target');
+function startCatch(){clearTimeout(catchTimer);catchCount=0;catchRunning=true;document.getElementById('catchScore').textContent='Corações: 0 / 10';document.getElementById('gameIntro').style.display='none';target.hidden=false;moveTarget();catchTimer=setTimeout(()=>{catchRunning=false;target.hidden=true;if(catchCount<10)showToast('Fim da rodada! Você pegou '+catchCount+' corações. Tente de novo 💗');},25000);}
+function moveTarget(){if(!catchRunning)return;const maxX=Math.max(0,field.clientWidth-48),maxY=Math.max(0,field.clientHeight-55);target.style.left=Math.random()*maxX+'px';target.style.top=Math.random()*maxY+'px';}
+target.addEventListener('click',()=>{if(!catchRunning)return;catchCount++;document.getElementById('catchScore').textContent='Corações: '+catchCount+' / 10';if(catchCount>=10){catchRunning=false;clearTimeout(catchTimer);target.hidden=true;showToast('Você desbloqueou um beijo infinito do Caio! 💋');burstHearts();}else moveTarget();});
+// Quiz
+const quiz=[{q:'Qual é a melhor parte de uma história de amor?',a:['Os presentes caros','Cuidar, rir e construir juntos','Nunca discordar'],correct:1,ok:'Isso! Amor também é parceria e cuidado. ❤️'},{q:'O que fazer quando bate saudade?',a:['Guardar tudo para si','Lembrar que a distância não apaga o carinho e conversar','Fingir que não sente'],correct:1,ok:'Isso! Um carinho e uma conversa podem aproximar. 💌'},{q:'Qual é um bom plano para o futuro?',a:['Respeitar os sonhos e crescer lado a lado','Nunca mudar nada','Deixar de conversar quando há problema'],correct:0,ok:'Perfeito: dois corações, com espaço para os sonhos de cada um. ✨'},{q:'Qual presente não precisa de embalagem?',a:['Um videogame','Tempo, atenção e abraço sincero','Uma caixa vazia'],correct:1,ok:'Acertou! Presença também é um presente. 🫂'}];let quizIndex=0;
+function renderQuiz(){const q=quiz[quizIndex];document.getElementById('quizQuestion').textContent=q.q;const a=document.getElementById('answers');a.innerHTML='';q.a.forEach((v,i)=>{const b=document.createElement('button');b.textContent=v;b.onclick=()=>answerQuiz(i);a.appendChild(b);});document.getElementById('quizResult').textContent='Pergunta '+(quizIndex+1)+' de '+quiz.length;}
+function answerQuiz(i){const q=quiz[quizIndex];document.getElementById('quizResult').textContent=i===q.correct?q.ok:'Quase! O importante é o carinho e a parceria. 💗';}
+function nextQuiz(){quizIndex=(quizIndex+1)%quiz.length;renderQuiz();}
+function revealScratch(){document.getElementById('scratch').classList.add('revealed');}
+const gifts=['Presente desbloqueado: vale um encontro escolhido por você. 🎀','Presente desbloqueado: um abraço que dura até a saudade ir embora. 🫂','Presente desbloqueado: um beijo e uma declaração só sua. 💋'];
+function gift(i){document.getElementById('giftResult').textContent=gifts[i];burstHearts();}
+
+// Carinhos rápidos. Para entregar notificações a outro aparelho, configure um endpoint seguro em CARINHO_API_URL.
+const affectionMessages={
+  'beijo':{emoji:'💋',title:'Um beijo chegou até você!',message:'Fecha os olhos por um segundinho e imagina um beijo meu. Guardei outro para quando a gente se encontrar. ❤️'},
+  'abraco':{emoji:'🫂',title:'Um abraço bem apertado!',message:'Queria te envolver nos meus braços e não soltar tão cedo. Até lá, recebe esse abraço cheio de amor.'},
+  'saudade':{emoji:'🥺',title:'A saudade bateu por aqui…',message:'Estou com saudade de você, da sua voz, do seu sorriso e até das nossas conversas bobas. Queria você pertinho.'},
+  'teamo':{emoji:'❤️',title:'Eu te amo, Clara!',message:'Entre tantas pessoas no mundo, meu coração continua feliz por ter escolhido você. Eu te amo, minha princesa.'},
+  'pensando':{emoji:'💭',title:'Você apareceu nos meus pensamentos',message:'Só passando para dizer que, no meio do meu dia, pensei em você e sorri. Você tem esse efeito em mim.'},
+  'orgulho':{emoji:'🌷',title:'Tenho muito orgulho de você',message:'Eu vejo seu esforço e torço por você de coração. Espero que você também reconheça o quanto é incrível.'},
+  'boa-noite':{emoji:'🌙',title:'Boa noite, minha princesa',message:'Descansa bem, amor. Que sua noite seja tranquila e seus sonhos sejam doces. Queria poder te dar um beijo de boa-noite.'},
+  'surpresa':{emoji:'🎁',title:'Uma surpresa só sua!',message:'Se eu pudesse, apareceria aí agora com flores, um abraço demorado e um monte de beijos. Por enquanto, fica com todo o meu carinho. 💗'}
+};
+function celebrateAffection(emoji){
+  const layer=document.getElementById('affectionCelebration');
+  const icon=document.getElementById('celebrationEmoji');
+  if(!layer||!icon)return;
+  layer.classList.remove('active');
+  layer.querySelectorAll('.celebration-particle').forEach(node=>node.remove());
+  icon.textContent=emoji||'💗';
+  void layer.offsetWidth;
+  layer.classList.add('active');
+  const particles=['💗','💕','💖','✨','💘',emoji||'💗'];
+  for(let i=0;i<22;i++){
+    const particle=document.createElement('span');
+    particle.className='celebration-particle';
+    particle.textContent=particles[Math.floor(Math.random()*particles.length)];
+    particle.style.left=Math.random()*100+'vw';
+    particle.style.animationDelay=(Math.random()*.45)+'s';
+    particle.style.animationDuration=(1.6+Math.random()*1.2)+'s';
+    layer.appendChild(particle);
+    setTimeout(()=>particle.remove(),3200);
+  }
+  setTimeout(()=>layer.classList.remove('active'),2500);
+}
+function displayAffection(item, fromLabel, isIncoming=false, createdAt=null){
+  const result=document.getElementById('affectionResult');
+  const heading=isIncoming ? `${item.emoji} ${fromLabel} mandou carinho para você!` : `${item.emoji} ${item.title}`;
+  result.innerHTML='<h3></h3><p></p><small style="color:#f5cbd9"></small>';
+  result.querySelector('h3').textContent=heading;
+  result.querySelector('p').textContent=item.message;
+  result.querySelector('small').textContent=(isIncoming?'Recebido agora':'Enviado')+' · Nosso Amor ♡';
+  result.classList.remove('pulse'); void result.offsetWidth; result.classList.add('pulse');
+  burstHearts();
+  celebrateAffection(item.emoji);
+}
+async function sendAffection(kind){
+  const item=affectionMessages[kind]; if(!item)return;
+  if(!currentUser){showToast('Entre na sua conta para enviar um carinho. ❤️');return;}
+  const caioUidConfigured=CAIO_UID.startsWith('COLE_AQUI');
+  const claraUidConfigured=CLARA_UID.startsWith('COLE_AQUI');
+  if(caioUidConfigured||claraUidConfigured){showToast('Falta configurar os UID do Caio e da Clara no arquivo.');return;}
+  const recipientId=currentUser.id===CAIO_UID ? CLARA_UID : (currentUser.id===CLARA_UID ? CAIO_UID : null);
+  if(!recipientId){showToast('Esta conta não está cadastrada como Caio ou Clara.');return;}
+  const {error}=await supabaseClient.from('carinhos').insert({
+    remetente:currentUser.id,
+    destinatario:recipientId,
+    tipo:kind,
+    mensagem:item.message
+  });
+  if(error){console.error('Erro ao enviar carinho:',error);showToast('Não consegui enviar. Confira a configuração do Supabase.');return;}
+  displayAffection(item,'Você',false,new Date().toISOString());
+  showToast(item.emoji+' Carinho enviado! 💌');
+}
+async function loadRecentAffections(){
+  if(!currentUser)return;
+  const {data,error}=await supabaseClient.from('carinhos')
+    .select('id,remetente,destinatario,tipo,mensagem,criado_em')
+    .order('criado_em',{ascending:false}).limit(1);
+  if(error){console.error('Erro ao carregar carinhos:',error);return;}
+  if(data&&data.length){
+    const row=data[0];
+    const kind=row.tipo;
+    const item=affectionMessages[kind];
+    if(item){
+      const incoming=row.destinatario===currentUser.id;
+      displayAffection({...item,message:row.mensagem||item.message},incoming?'Seu amor':(currentUser.id===CAIO_UID?'Caio':'Clara'),incoming,row.criado_em);
+    }
+  }
+}
+function subscribeToAffections(){
+  if(affectionSubscription){supabaseClient.removeChannel(affectionSubscription);affectionSubscription=null;}
+  if(!currentUser)return;
+  affectionSubscription=supabaseClient.channel('carinhos-do-casal-'+currentUser.id)
+    .on('postgres_changes',{event:'INSERT',schema:'public',table:'carinhos',filter:'destinatario=eq.'+currentUser.id},payload=>{
+      const row=payload.new; const item=affectionMessages[row.tipo];
+      if(item){
+        const fromLabel=row.remetente===CAIO_UID?'Caio':'Clara';
+        displayAffection({...item,message:row.mensagem||item.message},fromLabel,true,row.criado_em);
+        showToast(item.emoji+' Você recebeu um carinho! 💗');
+        showPage('affection');
+      }
+    }).subscribe(status=>{
+      document.getElementById('connectionStatus').textContent=status==='SUBSCRIBED'?'● Conectado em tempo real':'● '+status;
+    });
+}
+async function handleLogin(event){
+  event.preventDefault();
+  const email=document.getElementById('loginEmail').value.trim();
+  const password=document.getElementById('loginPassword').value;
+  const button=document.getElementById('loginSubmit'), errorBox=document.getElementById('loginError');
+  button.disabled=true;button.textContent='Entrando…';errorBox.textContent='';
+  const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+  button.disabled=false;button.textContent='Entrar no nosso cantinho 💌';
+  if(error){errorBox.textContent='Não consegui entrar. Confira o e-mail e a senha.';return;}
+  await applySession(data.session);
+}
+async function applySession(session){
+  currentUser=session?.user||null;
+  const gate=document.getElementById('loginGate');
+  if(!currentUser){
+    gate.hidden=false;
+    document.getElementById('signedInAs').textContent='Acesso privado';
+    document.getElementById('connectionStatus').textContent='Entre para conectar';
+    if(affectionSubscription){await supabaseClient.removeChannel(affectionSubscription);affectionSubscription=null;}
+    return;
+  }
+  if(currentUser.id!==CAIO_UID && currentUser.id!==CLARA_UID){
+    await supabaseClient.auth.signOut();currentUser=null;gate.hidden=false;
+    document.getElementById('loginError').textContent='Esta conta não tem acesso ao cantinho do casal.';
+    return;
+  }
+  gate.hidden=true;
+  document.getElementById('signedInAs').textContent='Conectado: '+(currentUser.id===CAIO_UID?'Caio':'Clara');
+  document.getElementById('connectionStatus').textContent='Conectando em tempo real…';
+  await loadRecentAffections();
+  subscribeToAffections();
+}
+document.getElementById('loginForm').addEventListener('submit',handleLogin);
+document.getElementById('logoutButton').addEventListener('click',async()=>{await supabaseClient.auth.signOut();await applySession(null);});
+supabaseClient.auth.getSession().then(({data})=>applySession(data.session));
+supabaseClient.auth.onAuthStateChange((_event,session)=>{if(session?.user?.id!==currentUser?.id)applySession(session);});
+
+renderQuiz();
+</script>
+</body>
+</html>
